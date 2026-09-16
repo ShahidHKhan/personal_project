@@ -11,6 +11,8 @@ import { staggerContainer, staggerItem } from "@/lib/motion";
 const TILE_CLASS =
   "flex items-center gap-3 rounded-xl border p-4 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-0.5 hover:border-accent-brand/40 hover:bg-accent";
 
+const displayUrl = (href: string) => href.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+
 export function Contact() {
   const emailHref = buildEmailLink(PROFILE.links.email);
   const telHref = `tel:${PROFILE.links.phone.replace(/[^\d+]/g, "")}`;
@@ -63,7 +65,9 @@ export function Contact() {
             <Linkedin className="h-5 w-5 shrink-0 text-accent-brand" aria-hidden />
             <div>
               <p className="text-sm font-medium">LinkedIn</p>
-              <p className="text-sm text-muted-foreground">linkedin.com/in/syedahmed-ali</p>
+              <p className="text-sm text-muted-foreground">
+                {displayUrl(PROFILE.links.linkedin)}
+              </p>
             </div>
           </motion.a>
 
@@ -77,7 +81,9 @@ export function Contact() {
             <Github className="h-5 w-5 shrink-0 text-accent-brand" aria-hidden />
             <div>
               <p className="text-sm font-medium">GitHub</p>
-              <p className="text-sm text-muted-foreground">github.com/Ahmed0754</p>
+              <p className="text-sm text-muted-foreground">
+                {displayUrl(PROFILE.links.github)}
+              </p>
             </div>
           </motion.a>
         </motion.div>

@@ -9,6 +9,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SKILL_GROUPS } from "@/lib/data";
 import { staggerContainer, staggerItem } from "@/lib/motion";
+import { cn } from "@/lib/utils";
 
 export function Skills() {
   return (
@@ -23,9 +24,18 @@ export function Skills() {
           viewport={{ once: true, amount: 0.2 }}
           className="grid gap-6 sm:grid-cols-2"
         >
-          {SKILL_GROUPS.map((group) => (
-            <motion.div key={group.title} variants={staggerItem}>
-              <Card>
+          {SKILL_GROUPS.map((group, i) => (
+            <motion.div
+              key={group.title}
+              variants={staggerItem}
+              className={cn(
+                // an odd-length list leaves a gap in the last row — let it span instead
+                SKILL_GROUPS.length % 2 === 1 &&
+                  i === SKILL_GROUPS.length - 1 &&
+                  "sm:col-span-2"
+              )}
+            >
+              <Card className="h-full">
                 <CardHeader>
                   <CardTitle className="text-base">{group.title}</CardTitle>
                 </CardHeader>

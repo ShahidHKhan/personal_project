@@ -1,23 +1,24 @@
 export const PROFILE = {
-  name: "Syed Ahmed Ali",
-  tagline: "CS student building AI agent tooling and backend systems",
+  name: "Shahid Khan",
+  tagline: "CS student building RAG systems, LLM tools, and ML pipelines",
   location: "New York, USA",
-  focus: "Currently building CLI tooling, rate-limiting infrastructure, and mainframe automation.",
+  focus:
+    "Currently an IT Technician at SUNY New Paltz, where the AI tools I built are part of the service desk's daily workflow.",
   about:
-    "Computer Science student at SUNY New Paltz (B.S., GPA 3.7, expected May 2027), transferred from Rockland Community College (A.S. in Mathematics & Computer Science, GPA 3.9). Currently focused on backend/infrastructure engineering, AI agent tooling, and systems work.",
+    "Computer Science student at SUNY New Paltz (B.S., GPA 3.4, expected May 2027). I focus on applied AI engineering: retrieval-augmented generation, LLM evaluation, fine-tuning, and turning models into tools real teams use every day. Google Cloud Generative AI Leader certified, 1st place at the 2026 New Paltz Hackathon, and President of the Muslim Student Association.",
   links: {
-    github: "https://github.com/Ahmed0754",
-    linkedin: "https://www.linkedin.com/in/syedahmed-ali",
-    email: "syedahmedali.0520@gmail.com",
-    phone: "845-248-1429",
-    resume: "/Syed_Ahmed_Ali_Resume.pdf",
+    github: "https://github.com/ShahidHKhan",
+    linkedin: "https://www.linkedin.com/in/shahid-h-khan",
+    email: "shahidhkhan.dev@gmail.com",
+    phone: "315-746-1247",
+    resume: "/Shahid_Khan_Resume.pdf",
   },
 } as const;
 
 export function buildEmailLink(
   to: string,
   subject = "Inquiry from your portfolio",
-  body = "Hi Syed, I saw your portfolio and…"
+  body = "Hi Shahid, I saw your portfolio and…"
 ) {
   return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
     to
@@ -35,39 +36,38 @@ export type ExperienceItem = {
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    role: "Software Engineer Intern — z/OS Container Extensions",
-    org: "IBM",
-    time: "May 2026 – Aug 2026",
-    location: "Poughkeepsie, NY",
+    role: "Information Technology Technician",
+    org: "SUNY New Paltz",
+    time: "Aug 2025 – Present",
+    location: "New Paltz, NY",
     bullets: [
-      "Built an MCP-integrated AI agent that replaced a 10+ step manual UI workflow with a single natural language command, autonomously invoking IBM z/OSMF workflow REST APIs to provision and manage containerized workloads",
-      "Automated mainframe infrastructure provisioning by scripting IBM's REST APIs and XML workflow definitions in Python, consolidating a multi-step manual process into a single reusable tool",
-      "Designed and debugged 8+ automated workflows orchestrating the deploy, modify, and teardown lifecycle for containerized workloads on z/OS, including a status-check threshold fix that aligned instance health checks with the underlying log query window",
-      "Shipped changes to a production release (v2.4.x), collaborating with senior engineers through code review",
+      "Resolved ~30 tickets per week for 100+ users by troubleshooting hardware and software issues in TeamDynamix",
+      "Secured campus user access by managing accounts, permissions, and password resets in Microsoft Azure",
+      "Prepared new laptops and devices for day-one use by imaging, configuring, and deploying them to faculty and staff",
+      "Restored Wi-Fi, printer, and classroom AV service by diagnosing connectivity and hardware issues on-site",
     ],
   },
   {
-    role: "Software Engineer Intern",
-    org: "Aurify AI",
-    orgNote: "Early-stage AI startup",
-    time: "Jul 2025 – Dec 2025",
+    role: "AI Engineer Intern",
+    org: "SUNY New Paltz",
+    time: "Jun 2026 – Aug 2026",
+    location: "New Paltz, NY",
+    bullets: [
+      "Cut resolution time on difficult tickets by 30% by designing and deploying HawkEye, an LLM-powered RAG assistant",
+      "Halved schedule generation time (4 weeks to 2) by building Desk-Scheduler, an LLM and constraint-solver pipeline",
+      "Improved HawkEye's retrieval quality by 25% by benchmarking two embedding designs and shipping the stronger one",
+      "Drove adoption across a 20-person IT office (2–3 uses per day) by tracking usage, applying feedback, and cutting latency and cost",
+    ],
+  },
+  {
+    role: "AI Quality Engineer Intern",
+    org: "GridDevs",
+    time: "Sep 2025 – Dec 2025",
     location: "Remote",
     bullets: [
-      "Built user profile features in React + TypeScript with Supabase — create/update/delete flows with auditing — shipping 5+ pull requests to production",
-      "Configured linting/formatting tooling that unified code style across the codebase",
-      "Wrote Jest unit and smoke tests for 3+ services, increasing test coverage and catching regressions in CI",
-    ],
-  },
-  {
-    role: "Software Engineer Intern — AI/ML",
-    org: "Macrosoft Inc.",
-    orgNote: "IT consulting firm",
-    time: "Jun 2023 – Aug 2023",
-    location: "Bedminster, NJ",
-    bullets: [
-      "Built Python preprocessing pipelines for text and image datasets, cutting training iteration time by ~20%",
-      "Optimized 2 RESTful services powering AI features, reducing response latency",
-      "Delivered features on schedule across a 3-month engagement in Agile/Scrum sprints",
+      "Identified the most reliable retrieval configuration for a RAG system, as measured by MRR, nDCG, and keyword coverage, by benchmarking multiple embedding models and LLMs against each other",
+      "Assessed LangChain-based versus native code implementations of the RAG pipeline against performance, stability, and maintainability criteria to inform quality decisions",
+      "Built automated Gradle test suites to validate data workflows and catch regressions across pipeline iterations",
     ],
   },
 ];
@@ -83,51 +83,39 @@ export type ProjectItem = {
 
 export const PROJECTS: ProjectItem[] = [
   {
-    title: "RampUp AI",
+    title: "HawkEye",
     tagline:
-      "Full-stack AI web app that classifies workplace inputs (Slack messages, terminal errors, Jira tickets) and generates plain-English explanations, action items, and tone-aware reply drafts using the Claude API. FastAPI + Supabase (Postgres/Auth/RLS) backend, React + TypeScript frontend, deployed on Vercel with a Dockerized backend. Includes a weekly brag-summary feature that auto-generates resume bullets from logged intern progress.",
-    tech: ["React", "TypeScript", "FastAPI", "Supabase", "Claude API"],
-    links: [{ label: "Code", href: "https://github.com/Ahmed0754/rampup-ai" }],
-    github: { owner: "Ahmed0754", repo: "rampup-ai" },
+      "RAG assistant for SUNY New Paltz's IT help desk that answers technician questions from an 850+ article knowledge base with cited sources. Multi-stage retrieval (query expansion, source merging, LLM reranking) evaluated with MRR and nDCG, a vector store migrated from ChromaDB to Postgres/pgvector on Supabase (4,000+ chunks re-embedded), and a weekly GitHub Actions pipeline that re-embeds only changed articles, with a circuit breaker against mass deletions. Cut resolution time on difficult tickets by 30%.",
+    tech: ["Python", "LangChain", "Gemini API", "PostgreSQL/pgvector", "Supabase", "Gradio", "Docker", "GitHub Actions"],
+    links: [{ label: "Code", href: "https://github.com/ShahidHKhan/HawkEye" }],
+    github: { owner: "ShahidHKhan", repo: "HawkEye" },
   },
   {
-    title: "repocheck",
+    title: "AutoPricer",
     tagline:
-      "GitHub repo health scanner published to PyPI (v0.4.0, 4 releases) scoring repos across 14 weighted health checks with JSON/CSV/Markdown/HTML export. Includes a published GitHub composite Action for CI gating, a local web dashboard (Chart.js score history, fix checklists, auto-refresh), org-wide scanning, batch mode, Slack webhook reporting, and 57-test coverage.",
-    tech: ["Python", "Click", "Rich", "GitHub REST API", "PyPI", "GitHub Actions"],
-    links: [{ label: "Code", href: "https://github.com/Ahmed0754/repocheck" }],
-    github: { owner: "Ahmed0754", repo: "repocheck" },
-    pypi: "repocheck",
+      "Chrome extension that flags mispriced used cars in real time. Trained on 500K used-car listings: a tuned XGBoost model cut baseline MAE by 71% ($9,781 → $2,799), a QLoRA fine-tuned Llama-3.2-3B cut its own error by 63% on a free Colab T4 GPU, and a multi-agent ensemble with RAG-augmented Gemini over 300K ChromaDB embeddings reduced MAE another 25% ($1,599 → $1,202). Served as a streaming FastAPI service on Modal serverless GPUs.",
+    tech: ["Python", "PyTorch", "Hugging Face", "XGBoost", "FastAPI", "Modal", "ChromaDB"],
+    links: [{ label: "Code", href: "https://github.com/ShahidHKhan/AutoPricer" }],
+    github: { owner: "ShahidHKhan", repo: "AutoPricer" },
   },
   {
-    title: "ratelimiter-py",
+    title: "Desk-Scheduler",
     tagline:
-      "Rate limiting library implementing 3 algorithms (token bucket, sliding window, fixed window) with pluggable in-memory/Redis backends using atomic operations. Includes FastAPI middleware (429/Retry-After/X-RateLimit-* headers), a 41-test suite, and a CLI benchmarking tool reporting p50/p99 latency.",
-    tech: ["Python", "Redis", "FastAPI", "Click", "PyPI"],
-    links: [{ label: "Code", href: "https://github.com/Ahmed0754/ratelimiter-py" }],
-    github: { owner: "Ahmed0754", repo: "ratelimiter-py" },
-    pypi: "ratelimiter-py",
+      "Automates the IT service desk's semester work schedule. A LangGraph workflow uses the Gemini API to extract availability from messy PDFs, spreadsheets, and photos, then Google OR-Tools (CP-SAT) builds the schedule under 6 hard rules, keeping LLM parsing separate from provable assignment logic. Verified by a 16-test pytest suite, with infeasibility diagnosis and an LLM-as-a-judge that fact-checks explanations against solver data. Cut schedule creation from 4 weeks to 2.",
+    tech: ["Python", "LangGraph", "Gemini API", "OR-Tools", "Streamlit", "SQLite", "Docker"],
+    links: [{ label: "Code", href: "https://github.com/ShahidHKhan/scheduler" }],
+    github: { owner: "ShahidHKhan", repo: "scheduler" },
   },
   {
-    title: "Premier League Backend API",
+    title: "Chamble",
     tagline:
-      "RESTful backend with Java Spring Boot, PostgreSQL, and Python ingestion for live player and match stats.",
-    tech: ["Java", "Spring Boot", "PostgreSQL", "Python"],
+      "Chess + gamble: a real-time multiplayer chess platform with three variants. Win a blackjack hand to keep a capture (Chess-21), solve a math challenge to capture (Chess-Matics), or move only the piece a roulette wheel lands on (Chess-Roulette). Real-time play over Socket.IO with ELO wagers, move timers, and room-code invites, plus custom bcrypt + JWT auth with email verification. React frontend on Cloudflare Pages, Express backend on Fly.io, Postgres on Supabase.",
+    tech: ["React", "TypeScript", "Socket.IO", "Express", "Supabase", "Fly.io"],
     links: [
-      { label: "Code", href: "https://github.com/Ahmed0754/Premier-League-Backend-Api" },
+      { label: "Code", href: "https://github.com/ShahidHKhan/Chamble" },
+      { label: "Live", href: "https://chamble.net" },
     ],
-    github: { owner: "Ahmed0754", repo: "Premier-League-Backend-Api" },
-  },
-  {
-    title: "AI Stock Market Predictor",
-    tagline:
-      "A full-stack AI-powered stock market forecasting application that uses LSTM (Long Short-Term Memory) neural networks to predict future stock prices. Built with Flask, Keras, and the Yahoo Finance API, the app allows users to enter any stock ticker symbol and visualize past trends alongside future predictions. Includes a sleek, responsive UI.",
-    tech: ["Python", "Flask", "Keras", "LSTM", "Yahoo Finance API"],
-    links: [
-      { label: "Code", href: "https://github.com/Ahmed0754/AI-Stock-Market-Predictor" },
-      { label: "Live", href: "https://health-dashboard-z3go.vercel.app" },
-    ],
-    github: { owner: "Ahmed0754", repo: "AI-Stock-Market-Predictor" },
+    github: { owner: "ShahidHKhan", repo: "Chamble" },
   },
 ];
 
@@ -139,44 +127,50 @@ export type SkillGroup = {
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     title: "Languages",
-    items: [
-      "Java",
-      "Python",
-      "JavaScript",
-      "TypeScript (ES6+)",
-      "C",
-      "C++",
-      "SQL",
-      "HTML/CSS",
-      "Bash/Linux",
-    ],
+    items: ["Python", "TypeScript", "JavaScript", "SQL"],
   },
   {
-    title: "Frameworks & Tools",
+    title: "AI & LLM Engineering",
     items: [
-      "React",
-      "Node.js",
-      "Next.js",
-      "Spring Boot",
-      "Flask",
-      "FastAPI",
-      "Docker",
-      "AWS",
-    ],
-  },
-  {
-    title: "Databases & DevOps",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Git/GitHub", "CI/CD", "Agile/Scrum"],
-  },
-  {
-    title: "AI & LLM Tooling",
-    items: [
-      "Claude API",
-      "MCP (Model Context Protocol)",
-      "OpenAI API",
+      "RAG",
+      "Reranking",
+      "LangChain",
+      "LangGraph",
+      "Agents / Tool Calling",
+      "Pydantic",
+      "LLM-as-a-Judge Evals",
       "Gemini API",
-      "GitHub Copilot",
-      "Cursor",
+    ],
+  },
+  {
+    title: "Machine Learning",
+    items: [
+      "PyTorch",
+      "Hugging Face (TRL, QLoRA)",
+      "scikit-learn",
+      "XGBoost",
+      "Weights & Biases",
+      "Google OR-Tools",
+    ],
+  },
+  {
+    title: "Web & Backend",
+    items: ["React", "Node.js", "Express", "FastAPI", "Socket.IO", "Streamlit", "Gradio", "REST APIs"],
+  },
+  {
+    title: "Databases & Deployment",
+    items: [
+      "PostgreSQL (pgvector)",
+      "Supabase",
+      "SQLite",
+      "ChromaDB",
+      "Docker",
+      "Modal",
+      "Fly.io",
+      "Cloudflare",
+      "GitHub Actions",
+      "Git",
+      "Microsoft Azure",
     ],
   },
 ];
@@ -192,14 +186,8 @@ export const EDUCATION: EducationItem[] = [
   {
     school: "SUNY New Paltz",
     degree: "B.S. in Computer Science",
-    gpa: "3.7",
-    time: "Jan 2025 – May 2027",
-  },
-  {
-    school: "Rockland Community College",
-    degree: "A.S. in Mathematics & Computer Science",
-    gpa: "3.9",
-    time: "Sep 2023 – Dec 2024",
+    gpa: "3.4",
+    time: "Aug 2023 – May 2027",
   },
 ];
 

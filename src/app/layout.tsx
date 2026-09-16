@@ -16,9 +16,9 @@ const martianMono = Martian_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Syed Ahmed Ali — Software Engineer",
+  title: "Shahid Khan — AI Engineer",
   description:
-    "Portfolio of Syed Ahmed Ali — CS student at SUNY New Paltz building backend systems, AI agent tooling, and full-stack applications.",
+    "Portfolio of Shahid Khan — CS student at SUNY New Paltz building RAG systems, LLM-powered tools, ML pipelines, and real-time web apps.",
 };
 
 export const viewport: Viewport = {
