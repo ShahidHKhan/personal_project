@@ -107,15 +107,12 @@ export const PROJECTS: ProjectItem[] = [
     github: { owner: "ShahidHKhan", repo: "scheduler" },
   },
   {
-    title: "Chamble",
+    title: "Rebound",
     tagline:
-      "Chess + gamble: a real-time multiplayer chess platform with three variants. Win a blackjack hand to keep a capture (Chess-21), solve a math challenge to capture (Chess-Matics), or move only the piece a roulette wheel lands on (Chess-Roulette). Real-time play over Socket.IO with ELO wagers, move timers, and room-code invites, plus custom bcrypt + JWT auth with email verification. React frontend on Cloudflare Pages, Express backend on Fly.io, Postgres on Supabase.",
-    tech: ["React", "TypeScript", "Socket.IO", "Express", "Supabase", "Fly.io"],
-    links: [
-      { label: "Code", href: "https://github.com/ShahidHKhan/Chamble" },
-      { label: "Live", href: "https://chamble.net" },
-    ],
-    github: { owner: "ShahidHKhan", repo: "Chamble" },
+      "Senior capstone: an AI coaching app that keeps athletes training through minor injuries, without a doctor referral or insurance. A user enters an injured body part, an Express/Postgres backend pulls matching candidates from a 30+ exercise library, and the Gemini API selects three and assigns sets and reps, returned as an editable plan persisted by UUID behind full CRUD endpoints. Built as a pnpm monorepo with a Next.js App Router frontend, node-pg-migrate schema migrations against Supabase, and a Vitest suite.",
+    tech: ["TypeScript", "Next.js", "React", "Express", "PostgreSQL", "Supabase", "Gemini API", "Vitest"],
+    links: [{ label: "Code", href: "https://github.com/Ahmed0754/rebound" }],
+    github: { owner: "Ahmed0754", repo: "rebound" },
   },
 ];
 
