@@ -5,7 +5,7 @@ export const PROFILE = {
   focus:
     "Currently an IT Technician at SUNY New Paltz, where the AI tools I built are part of the service desk's daily workflow.",
   about:
-    "Computer Science student at SUNY New Paltz (B.S., GPA 3.4, expected May 2027). I focus on applied AI engineering: retrieval-augmented generation, LLM evaluation, fine-tuning, and turning models into tools real teams use every day. Google Cloud Generative AI Leader certified, 1st place at the 2026 New Paltz Hackathon, and President of the Muslim Student Association.",
+    "Computer Science student at SUNY New Paltz, finishing my B.S. in Dec 2026 (GPA 3.5) and continuing into the M.S. program in Jan 2027. I focus on applied AI engineering: retrieval-augmented generation, LLM evaluation, fine-tuning, and turning models into tools real teams use every day. Google Cloud Generative AI Leader certified, 1st place at the 2026 New Paltz Hackathon, and President of the Muslim Student Association.",
   links: {
     github: "https://github.com/ShahidHKhan",
     linkedin: "https://www.linkedin.com/in/shahid-h-khan",
@@ -48,7 +48,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     ],
   },
   {
-    role: "AI Engineer Intern",
+    role: "AI Engineer — IT Desk",
     org: "SUNY New Paltz",
     time: "Jun 2026 – Aug 2026",
     location: "New Paltz, NY",
@@ -175,19 +175,39 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
 ];
 
+export type EducationHighlight = {
+  label: string;
+  href?: string;
+};
+
 export type EducationItem = {
   school: string;
   degree: string;
-  gpa: string;
+  gpa?: string;
   time: string;
+  highlights?: EducationHighlight[];
 };
 
 export const EDUCATION: EducationItem[] = [
   {
     school: "SUNY New Paltz",
+    degree: "M.S. in Computer Science",
+    time: "Jan 2027 – May 2028",
+  },
+  {
+    school: "SUNY New Paltz",
     degree: "B.S. in Computer Science",
-    gpa: "3.4",
-    time: "Aug 2023 – May 2027",
+    gpa: "3.5",
+    time: "Aug 2023 – Dec 2026",
+    highlights: [
+      {
+        label: "Research: The Architecture of Modern LLMs (2026)",
+        href: "/SKhan_LLM_Research.pdf",
+      },
+      { label: "1st Place — 2026 SUNY New Paltz Hackathon" },
+      { label: "Google Cloud Generative AI Leader (2025)" },
+      { label: "AI Engineer Core Track (2026)" },
+    ],
   },
 ];
 
